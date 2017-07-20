@@ -87,7 +87,7 @@ class MysqlAdapter extends Connection
 			'integer' => array('name' => 'int', 'length' => 11),
 			'float' => array('name' => 'float'),
 			'datetime' => array('name' => 'datetime'),
-			'timestamp' => array('name' => 'datetime'),
+			'timestamp' => 'TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP', //array('name' => 'datetime'),
 			'time' => array('name' => 'time'),
 			'date' => array('name' => 'date'),
 			'binary' => array('name' => 'blob'),

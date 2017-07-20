@@ -18,6 +18,7 @@ class Column
 	const DATETIME	= 4;
 	const DATE		= 5;
 	const TIME		= 6;
+    const TIMESTAMP = 7;
 
 	/**
 	 * Map a type to an column type.
@@ -26,7 +27,7 @@ class Column
 	 */
 	static $TYPE_MAPPING = array(
 		'datetime'	=> self::DATETIME,
-		'timestamp'	=> self::DATETIME,
+		'timestamp'	=> self::TIMESTAMP,
 		'date'		=> self::DATE,
 		'time'		=> self::TIME,
 

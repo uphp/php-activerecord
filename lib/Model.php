@@ -465,11 +465,11 @@ class Model
 		if ($value instanceof \DateTime) {
 			$date_class = Config::instance()->get_date_class();
 			if (!($value instanceof $date_class))
-				$value = $date_class::createFromFormat(
-					Connection::DATETIME_TRANSLATE_FORMAT,
-					$value->format(Connection::DATETIME_TRANSLATE_FORMAT),
-					$value->getTimezone()
-				);
+                $value = $date_class::createFromFormat(
+                    Connection::DATETIME_TRANSLATE_FORMAT,
+                    $value->format(Connection::DATETIME_TRANSLATE_FORMAT),
+                    $value->getTimezone()
+                );
 		}
 
 		if ($value instanceof DateTimeInterface)
@@ -929,6 +929,12 @@ class Model
 	 * <code>
 	 * YourModel::delete_all(array('conditions' => 'name = "Tito"'));
 	 * </code>
+     *
+     * Delete all
+     *
+     * <code>
+     * YourModel::delete_all();
+     * </code>
 	 *
 	 * An options array takes the following parameters:
 	 *
@@ -938,10 +944,10 @@ class Model
 	 * <li><b>order:</b> A SQL fragment for ordering such as: 'name asc', 'id desc, name asc' (MySQL & Sqlite only)</li>
 	 * </ul>
 	 *
-	 * @params array $options
-	 * return integer Number of rows affected
+	 * @params mixed $options
+	 * @return integer Number of rows affected
 	 */
-	public static function delete_all($options=array())
+	public static function delete_all($options = NULL)
 	{
 		$table = static::table();
 		$conn = static::connection();
@@ -1143,10 +1149,10 @@ class Model
 		$now = date('Y-m-d H:i:s');
 
 		if (isset($this->updated_at))
-			$this->updated_at = $now;
+            $this->updated_at = $now;
 
 		if (isset($this->created_at) && $this->is_new_record())
-			$this->created_at = $now;
+            $this->created_at = $now;
 	}
 
 	/**

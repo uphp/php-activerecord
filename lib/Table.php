@@ -435,8 +435,11 @@ class Table
 			{
 				if (isset($this->columns[$name]) && $this->columns[$name]->type == Column::DATE)
 					$hash[$name] = $this->conn->date_to_string($value);
-				else
-					$hash[$name] = $this->conn->datetime_to_string($value);
+				elseif (isset($this->columns[$name]) && $this->columns[$name]->type == Column::DATETIME)
+                    $hash[$name] = $this->conn->datetime_to_string($value);
+                else
+                    $hash[$name] = $this->conn->timestamp_to_string($value);
+
 			}
 			else
 				$hash[$name] = $value;

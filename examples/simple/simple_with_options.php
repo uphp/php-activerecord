@@ -13,12 +13,12 @@ class Book extends ActiveRecord\Model
 	static $connection = 'production';
 
 	// explicit database name will generate sql like so => db.table_name
-	static $db = 'test';
+	static $db = 'dbteste';
 }
 
 $connections = array(
 	'development' => 'mysql://invalid',
-	'production' => 'mysql://test:test@127.0.0.1/test'
+	'production' => 'mysql://root:@127.0.0.1/dbteste'
 );
 
 // initialize ActiveRecord
@@ -28,5 +28,5 @@ ActiveRecord\Config::initialize(function($cfg) use ($connections)
     $cfg->set_connections($connections);
 });
 
-print_r(Book::first()->attributes());
+var_dump(Book::first());
 ?>

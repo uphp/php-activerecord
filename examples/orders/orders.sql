@@ -6,7 +6,7 @@ create table people(
   name varchar(50),
   state char(2),
   created_at datetime,
-  updated_at datetime
+  updated_at timestamp
 );
 
 drop table if exists orders;

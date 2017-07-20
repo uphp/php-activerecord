@@ -67,7 +67,12 @@ abstract class Connection
 	 * Database's datetime format
 	 * @var string
 	 */
-	static $datetime_format = 'Y-m-d H:i:s T';
+	static $datetime_format = 'Y-m-d H:i:s';
+    /**
+     * Database's timestamp format
+     * @var string
+     */
+    static $timestamp_format = 'Y-m-d H:i:s T';
 	/**
 	 * Default PDO options to set for each connection.
 	 * @var array
@@ -475,6 +480,17 @@ abstract class Connection
 	{
 		return $datetime->format(static::$datetime_format);
 	}
+
+    /**
+     * Return a timestamp formatted into the database's timestamp format.
+     *
+     * @param DateTime $timestamp The DateTime object
+     * @return string
+     */
+    public function timestamp_to_string($timestamp)
+    {
+        return $timestamp->format(static::$timestamp_format);
+    }
 
 	/**
 	 * Converts a string representation of a datetime into a DateTime object.
