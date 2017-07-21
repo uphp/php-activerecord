@@ -217,6 +217,7 @@ abstract class AbstractRelationship implements InterfaceRelationship
 	 *
 	 * @param Model $model The model which holds this association
 	 * @param array $attributes Hash containing attributes to initialize the model with
+     * @param bool $guard_attributes
 	 * @return Model
 	 */
 	public function build_association(Model $model, $attributes=array(), $guard_attributes=true)
@@ -230,6 +231,7 @@ abstract class AbstractRelationship implements InterfaceRelationship
 	 *
 	 * @param Model $model The model which holds this association
 	 * @param array $attributes Hash containing attributes to initialize the model with
+     * @param bool $guard_attributes
 	 * @return Model
 	 */
 	public function create_association(Model $model, $attributes=array(), $guard_attributes=true)
