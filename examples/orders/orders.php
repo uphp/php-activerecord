@@ -1,5 +1,10 @@
 <?php
-require_once __DIR__ . '/../../ActiveRecord.php';
+//require_once __DIR__ . '/../../ActiveRecord.php';
+require("../../vendor/autoload.php");
+
+require_once ("models/Order.php");
+require_once ("models/Payment.php");
+require_once ("models/Person.php");
 
 // initialize ActiveRecord
 ActiveRecord\Config::initialize(function($cfg)

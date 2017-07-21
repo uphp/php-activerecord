@@ -2,9 +2,10 @@
 /**
  * @package ActiveRecord
  */
-namespace ActiveRecord;
+namespace ActiveRecord\adapters;
 
 use PDO;
+use ActiveRecord\Connection;
 
 /**
  * Adapter for OCI (not completed yet).

@@ -2,7 +2,9 @@
 /**
  * @package ActiveRecord
  */
-namespace ActiveRecord;
+namespace ActiveRecord\adapters;
+
+use ActiveRecord\Connection;
 
 /**
  * Adapter for Postgres (not completed yet)

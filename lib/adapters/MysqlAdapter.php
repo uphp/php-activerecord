@@ -2,7 +2,9 @@
 /**
  * @package ActiveRecord
  */
-namespace ActiveRecord;
+namespace ActiveRecord\Adapters;
+
+use ActiveRecord\Connection;
 
 /**
  * Adapter for MySQL.
